@@ -1,0 +1,56 @@
+{
+	"name": "react-starter",
+	"version": "1.0.0",
+	"description": "react starter with webpack and babel",
+	"main": "index.js",
+	"author": "nathan m weller",
+	"license": "MIT",
+	"scripts": {
+		"start": "./node_modules/.bin/webpack-dev-server",
+		"build": "webpack -p",
+		"build:test": "webpack -d",
+		"eslint": "./node_modules/.bin/eslint --ext .jsx --ext .js src webpack.config.*",
+		"eslint:report": "./node_modules/.bin/eslint --ext .jsx --ext .js src --output-file ./report/eslint-report.html --format html",
+		"test": "jest"
+	},
+	"dependencies": {
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.0",
+		"babel-preset-react": "^6.24.1",
+		"copy-webpack-plugin": "^4.1.0",
+		"eslint": "^4.8.0",
+		"eslint-config-airbnb": "15.1.0",
+		"eslint-plugin-import": "2.7.0",
+		"eslint-plugin-jsx-a11y": "5.1.1",
+		"eslint-plugin-react": "7.4.0",
+		"jest": "^21.2.1",
+		"react-test-renderer": "^16.0.0",
+		"webpack": "^3.6.0",
+		"webpack-dev-server": "^2.9.1"
+	},
+	"babel": {
+		"presets": [
+			"env",
+			"react"
+		]
+	},
+	"eslintConfig": {
+		"extends": "airbnb",
+		"rules": {
+			"indent": [
+				"error",
+				"tab"
+			],
+			"react/jsx-indent": [
+				"error",
+				"tab"
+			],
+			"no-tabs": "off"
+		}
+	}
+}
