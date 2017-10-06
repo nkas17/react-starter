@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = () => (
-	<p>Hello React with webpack dev server!</p>
+	<p>Hello React and with hot-reloading!</p>
 );
 
 export default App;
