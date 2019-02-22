@@ -3,6 +3,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
+	mode: 'development',
 	entry: `${path.resolve(__dirname, 'src')}/index.jsx`,
 	resolve: {
 		extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
@@ -13,7 +14,6 @@ const config = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js',
 	},
 	plugins: [
 		new CopyWebpackPlugin([
@@ -22,11 +22,13 @@ const config = {
 		new webpack.HotModuleReplacementPlugin(),
 	],
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.jsx?/,
 				include: `${path.resolve(__dirname, 'src')}`,
-				loader: 'babel-loader',
+				use: {
+					loader: 'babel-loader',
+				},
 			},
 		],
 	},
