@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -8,6 +9,7 @@ const config = {
 	},
 	devServer: {
 		contentBase: './dist',
+		hot: true,
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -17,6 +19,7 @@ const config = {
 		new CopyWebpackPlugin([
 			{ from: './src/index.html' },
 		]),
+		new webpack.HotModuleReplacementPlugin(),
 	],
 	module: {
 		loaders: [
