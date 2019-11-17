@@ -1,20 +1,40 @@
 module.exports = {
-	"extends": "airbnb",
-	"env": {
-		"browser": true,
-		"commonjs": true,
-		"node": true,
-		"jest": true,
+	extends: [
+		"airbnb",
+		"prettier",
+		"prettier/react"
+	],
+	plugins: [
+		"prettier"
+	],
+	env: {
+		browser: true,
+		commonjs: true,
+		node: true,
+		jest: true,
 	},
-	"rules": {
-		"indent": [
+	rules: {
+		indent: [
 			"error",
-			"tab"
+			"tab",
 		],
 		"react/jsx-indent": [
 			"error",
-			"tab"
+			"tab",
 		],
-		"no-tabs": "off"
+		"react/jsx-indent-props": [
+			"error",
+			"tab",
+		],
+		"no-tabs": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				trailingComma: "es5",
+				singleQuote: true,
+				printWidth: 80,
+				useTabs: true
+			}
+		],
 	}
-};
+}
