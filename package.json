@@ -1,41 +1,44 @@
 {
-	"name": "react-starter",
-	"version": "1.0.0",
-	"description": "react starter with webpack and babel",
-	"main": "index.js",
-	"repository": "https://github.com/nkas17/react-starter.git",
-	"author": "nathan m weller <nkas17@gmail.com>",
-	"license": "MIT",
-	"scripts": {
-		"start": "./node_modules/.bin/webpack-dev-server",
-		"build": "webpack",
-		"build:test": "webpack",
-		"eslint": "./node_modules/.bin/eslint --ext .jsx --ext .js src webpack.config.*",
-		"eslint:report": "./node_modules/.bin/eslint --ext .jsx --ext .js src --output-file ./report/eslint-report.html --format html",
-		"test": "jest"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.7.2",
-		"@babel/preset-env": "^7.7.1",
-		"@babel/preset-react": "^7.7.0",
-		"babel-loader": "^8.0.6",
-		"copy-webpack-plugin": "^5.0.5",
-		"eslint": "^6.6.0",
-		"eslint-config-airbnb": "18.0.1",
-		"eslint-config-prettier": "6.6.0",
-		"eslint-plugin-import": "2.18.2",
-		"eslint-plugin-jsx-a11y": "6.2.3",
-		"eslint-plugin-prettier": "3.1.1",
-		"eslint-plugin-react": "7.16.0",
-		"jest": "^24.9.0",
-		"prettier": "1.19.1",
-		"react-test-renderer": "^16.12.0",
-		"webpack": "^4.41.2",
-		"webpack-cli": "^3.3.10",
-		"webpack-dev-server": "^3.9.0"
-	},
-	"dependencies": {
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0"
-	}
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "react starter with webpack and babel",
+  "main": "index.js",
+  "repository": "https://github.com/nkas17/react-starter.git",
+  "author": "nathan m weller <nkas17@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "build-develop": "webpack --mode development",
+    "clean": "npx rimraf dist",
+    "format": "prettier --check \"**/*.*\"",
+    "lint": "eslint . --ext .jsx --ext .js src webpack.config.*",
+    "lint:report": "eslint . --ext .jsx --ext .js src --output-file ./report/eslint-report.html --format html",
+    "test": "jest",
+    "pre-push": "yarn lint && yarn format && yarn test && yarn clean && yarn build"
+  },
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/preset-env": "7.16.4",
+    "@babel/preset-react": "7.16.0",
+    "babel-loader": "8.2.3",
+    "copy-webpack-plugin": "10.0.0",
+    "eslint": "8.3.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "jest": "27.3.1",
+    "prettier": "2.4.1",
+    "react-test-renderer": "17.0.2",
+    "webpack": "5.64.3",
+    "webpack-cli": "4.9.1",
+    "webpack-dev-server": "4.5.0"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
 }
